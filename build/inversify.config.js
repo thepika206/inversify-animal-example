@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.container = void 0;
+var inversify_1 = require("inversify");
+var company_1 = require("./company");
+var types_1 = require("./types");
+var container = new inversify_1.Container();
+exports.container = container;
+container.bind(types_1.USER).to(company_1.Employee);
+container.bind(types_1.COMPANY).to(company_1.Company);

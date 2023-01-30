@@ -31,11 +31,12 @@ var Employee = /** @class */ (function () {
 }());
 exports.Employee = Employee;
 var Company = /** @class */ (function () {
-    function Company(employee) {
-        this.employee = employee;
+    function Company(_employee) {
+        this.employee = _employee;
     }
     Company.prototype.getEmployee = function () {
-        console.log(this.employee.getName('John') + ' ' + this.employee.getAge(25));
+        var statement = this.employee.getName('John') + ' ' + this.employee.getAge(26);
+        return statement;
     };
     Company = __decorate([
         (0, inversify_1.injectable)(),

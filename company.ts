@@ -18,14 +18,13 @@ class Employee implements UserInterface {
 class Company implements CompanyInterface{
   public employee:UserInterface
 
-  constructor(
-    @inject(USER) employee:UserInterface
-  ){
-    this.employee = employee
+  constructor( @inject(USER) _employee:UserInterface ){
+    this.employee = _employee
   }
 
-  public getEmployee():void {
-    console.log(this.employee.getName('John') + ' ' + this.employee.getAge(25))
+  public getEmployee():string {
+    let statement = this.employee.getName('John') + ' ' + this.employee.getAge(26)
+    return statement
   }
 }
 

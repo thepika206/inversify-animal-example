@@ -4,12 +4,19 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -p tsconfig.json",
+    "serve": "node ./build/index.js",
+    "start": "tsc-watch --onSuccess 'npm run serve'"
+
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "inversify": "^6.0.1",
     "reflect-metadata": "^0.1.13"
+  },
+  "devDependencies": {
+    "tsc-watch": "^6.0.0"
   }
 }

@@ -1,2 +1,4 @@
-export const USER = 'USER'
-export const COMPANY = 'COMPANY'
+const USER = 'USER'
+const COMPANY = 'COMPANY'
+
+export { USER, COMPANY }

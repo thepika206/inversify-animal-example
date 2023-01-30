@@ -1,8 +1,8 @@
 import "reflect-metadata"
-import { CompanyInterface } from "./interface"
+import { DogInterface, AnimalInterface } from "./interface"
 import { container } from "./inversify.config"
-import { COMPANY } from "./types"
+import { TYPES } from "./types"
 
-const company = container.get<CompanyInterface>(COMPANY)
-
-console.log(company.getEmployee())
+const dog1 = container.get<DogInterface>(TYPES.DOG)
+console.log(dog1.wagTail())
+console.log(dog1.animal)

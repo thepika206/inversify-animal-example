@@ -1,8 +1,9 @@
-export interface UserInterface {
-  getName(name:string): string
-  getAge(age:number): number
+export interface AnimalInterface {
+  eats(food:string):string,
+  species:string
 }
 
-export interface CompanyInterface {
-  getEmployee():void
+export interface DogInterface {
+  wagTail():string,
+  animal:object
 }

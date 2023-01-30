@@ -1,9 +1,9 @@
 import { Container } from "inversify";
-import { Company, Employee } from "./company";
-import { COMPANY, USER } from "./types";
+import { Dog, Animal } from "./service";
+import { TYPES } from "./types";
 
 const container = new Container()
-container.bind(USER).to(Employee)
-container.bind(COMPANY).to(Company)
+container.bind(TYPES.ANIMAL).to(Animal)
+container.bind(TYPES.DOG).to(Dog)
 
 export { container }

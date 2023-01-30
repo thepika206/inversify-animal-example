@@ -1,4 +1,4 @@
-const USER = 'USER'
-const COMPANY = 'COMPANY'
-
-export { USER, COMPANY }
+export const TYPES = {
+  ANIMAL : 'ANIMAL',
+  DOG : 'DOG'
+}

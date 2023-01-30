@@ -12,37 +12,37 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Company = exports.Employee = void 0;
+exports.Dog = exports.Animal = void 0;
 var inversify_1 = require("inversify");
 var types_1 = require("./types");
-var Employee = /** @class */ (function () {
-    function Employee() {
+var Animal = /** @class */ (function () {
+    function Animal() {
+        this.species = 'unknown species';
     }
-    Employee.prototype.getName = function (name) {
-        return name;
+    Animal.prototype.eats = function (food) {
+        if (food === void 0) { food = 'generic food'; }
+        return "eats some ".concat(food);
     };
-    Employee.prototype.getAge = function (age) {
-        return age;
-    };
-    Employee = __decorate([
+    Animal = __decorate([
         (0, inversify_1.injectable)()
-    ], Employee);
-    return Employee;
+    ], Animal);
+    return Animal;
 }());
-exports.Employee = Employee;
-var Company = /** @class */ (function () {
-    function Company(_employee) {
-        this.employee = _employee;
+exports.Animal = Animal;
+var Dog = /** @class */ (function () {
+    function Dog(animal) {
+        this.animal = animal;
+        this.animal.species = "Canine";
     }
-    Company.prototype.getEmployee = function () {
-        var statement = this.employee.getName('John') + ' ' + this.employee.getAge(26);
+    Dog.prototype.wagTail = function () {
+        var statement = "The Dog (".concat(this.animal.species, ") wags its tails and ").concat(this.animal.eats('kibble'));
         return statement;
     };
-    Company = __decorate([
+    Dog = __decorate([
         (0, inversify_1.injectable)(),
-        __param(0, (0, inversify_1.inject)(types_1.USER)),
+        __param(0, (0, inversify_1.inject)(types_1.TYPES.ANIMAL)),
         __metadata("design:paramtypes", [Object])
-    ], Company);
-    return Company;
+    ], Dog);
+    return Dog;
 }());
-exports.Company = Company;
+exports.Dog = Dog;
